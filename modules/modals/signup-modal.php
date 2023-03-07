@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label for="passwordInput" class="col-form-label">Password:</label>
-                <input type="email" class="form-control" id="passwordInput">
+                <input type="password" class="form-control" id="passwordInput">
             </div>
             <div class="form-group">
                 <label for="confirmPasswordInput" class="col-form-label">Confirm Password:</label>
