@@ -9,36 +9,30 @@
         </button>
       </div>
       <!-- Signup Modal Body -->
+      <form action="functions/create-account-action.php" method="POST">
       <div class="modal-body">
-        <form>
-            <div class="form-group">
-                <label for="firstNameInput" class="col-form-label">First Name:</label>
-                <input type="text" class="form-control" id="firstNameInput">
-            </div>
-            <div class="form-group">
-                <label for="surnameInput" class="col-form-label">Surname:</label>
-                <input type="text" class="form-control" id="surnameInput">
-            </div>
+        
             <div class="form-group">
                 <label for="emailInput" class="col-form-label">Email:</label>
-                <input type="email" class="form-control" id="emailInput">
+                <input type="email" class="form-control" id="emailInput" name="emailInput" required>
             </div>
             <div class="form-group">
                 <label for="passwordInput" class="col-form-label">Password:</label>
-                <input type="password" class="form-control" id="passwordInput">
+                <input type="password" class="form-control" id="passwordInput" name="passwordInput" required>
             </div>
             <div class="form-group">
                 <label for="confirmPasswordInput" class="col-form-label">Confirm Password:</label>
-                <input type="password" class="form-control" id="confirmPasswordInput">
+                <input type="password" class="form-control" id="confirmPasswordInput" name="confirmPasswordInput" required>
             </div>
-        </form>
+        
       </div>
       <!-- End Signup Modal Body -->
       <!-- Signup Modal Footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Create Account</button>
+        <input class="btn btn-primary" type="submit" value="Create Account">
+        </form> 
       </div>
       <!-- End Signup Modal Footer -->
     </div>

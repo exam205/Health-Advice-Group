@@ -1,6 +1,7 @@
 <?php 
 include_once 'modals/login-modal.php';
 include_once 'modals/signup-modal.php';
+include_once 'modals/account-details-modal.php';
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
