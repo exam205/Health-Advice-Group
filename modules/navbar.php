@@ -1,3 +1,8 @@
+<?php 
+include_once 'modals/login-modal.php';
+include_once 'modals/signup-modal.php';
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Health Advice Group</a>
@@ -31,7 +36,7 @@
 
         <?php } else { ?>
             <li class="nav-item">
-                <a class="nav-link" href="#">Login / Sign Up</a>
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login / Sign Up</a>
             </li>
         <?php } ?>
       </ul>
