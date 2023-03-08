@@ -29,12 +29,16 @@
                 <input type="text" class="form-control" id="surnameInput" name="surnameInput" required>
             </div>
             <div class="form-group">
+                <label for="dobInput" class="col-form-label">Date of Birth:</label>
+                <input type="date" class="form-control" id="dobInput" name="dobInput" required>
+            </div>
+            <div class="form-group">
                 <label for="genderInput" class="col-form-label">Gender:</label>
                 <select class=form-select id="genderInput" name="genderInput" aria-label="Default select example" required>
                     <option selected disabled>Select an Option</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    <option value="3">Other</option>
                 </select>
             </div>
             <div class="form-group">
@@ -43,7 +47,7 @@
             </div>
             <div class="form-group">
                 <label for="cityInput" class="col-form-label">City:</label>
-                <input type="text" class="form-control" id="cityInput" name="postcodeInput" required>
+                <input type="text" class="form-control" id="cityInput" name="cityInput" required>
             </div>
             <div class="form-group">
                 <label for="countryInput" class="col-form-label">Country:</label>

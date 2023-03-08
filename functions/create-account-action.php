@@ -1,17 +1,7 @@
 <?php
+    include_once "../classes/common-functions.php";
     include_once "dbconnect.php";
     session_start();
-    function goBack(){
-        if (isset($_SERVER["HTTP_REFERER"])){
-            $referer = $_SERVER['HTTP_REFERER'];
-            header("Location: " . $referer);
-            exit;
-        }else{
-            header("Location: index.php"); //If no referer, go back to index.php
-            exit;
-        }
-    }
-
     function verifyPassword($password_input, $verify_password_input)// Verifies that the password and verify password inputs match
     {
         if($password_input == $verify_password_input)
@@ -22,7 +12,7 @@
         {
             $_SESSION['error'] = "Passwords do not match";
             $_SESSION['error_loc'] = "createAccountModal";
-            goBack();
+            Common::goBack();
         }
     }
 
@@ -34,7 +24,9 @@
         $conn->query($sql);
         $_SESSION['success'] = "Account created successfully!";
         $_SESSION['success_loc'] = "additionalDetailsModal";
-        goBack();
+        $_SESSION['email'] = $email_input;
+        $_SESSION['uid'] = $conn->insert_id;
+        Common::goBack();
     }
 
     function checkEmail($email,$conn){
@@ -44,7 +36,7 @@
         if ($sql_query->num_rows > 0){
             $_SESSION['error'] = "Email already exists";
             $_SESSION['error_loc'] = "createAccountModal";
-            goBack();
+            Common::goBack();
         }else{
             return false;
         }
