@@ -1,5 +1,4 @@
 <?php
-function dbconnect(){
     $username = "healthadmin";
     $password = "healthgroup";
     $hostname = "localhost";
@@ -7,5 +6,4 @@ function dbconnect(){
     //connection to the database
     $conn = mysqli_connect($hostname, $username, $password, $dbname) or die("Unable to connect to MySQL");
     return $conn;
-}
  ?>

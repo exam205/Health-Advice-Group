@@ -1,7 +1,17 @@
-<?php 
+<?php
 include_once 'modals/login-modal.php';
 include_once 'modals/signup-modal.php';
 include_once 'modals/account-details-modal.php';
+
+if (isset($_SESSION['error'])){
+    echo "<script>
+    $(document).ready(function(){
+        $('#{$_SESSION['error_loc']}').modal('show');
+    });
+    </script>";
+    unset($_SESSION['error']);
+    unset($_SESSION['error_loc']);
+}
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

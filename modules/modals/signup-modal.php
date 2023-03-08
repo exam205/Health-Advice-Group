@@ -1,4 +1,5 @@
 <!-- Signup Modal -->
+<?php $_SESSION['previous_page'] = $_SERVER['REQUEST_URI'];?>
 <div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="createAccountModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -15,6 +16,13 @@
             <div class="form-group">
                 <label for="emailInput" class="col-form-label">Email:</label>
                 <input type="email" class="form-control" id="emailInput" name="emailInput" required>
+                <?php
+                if(isset($_SESSION['error'])&&$_SESSION['error']=="Email already exists"){
+                        echo "<div class='alert alert-danger' role='alert'>
+                        {$_SESSION['error']}
+                        </div>";
+                    }
+                ?>
             </div>
             <div class="form-group">
                 <label for="passwordInput" class="col-form-label">Password:</label>
@@ -23,7 +31,15 @@
             <div class="form-group">
                 <label for="confirmPasswordInput" class="col-form-label">Confirm Password:</label>
                 <input type="password" class="form-control" id="confirmPasswordInput" name="confirmPasswordInput" required>
+                <?php
+                    if(isset($_SESSION['error'])&&$_SESSION['error']=="Passwords do not match"){
+                        echo "<div class='alert alert-danger' role='alert'>
+                        {$_SESSION['error']}
+                        </div>";
+                    }
+                ?>
             </div>
+            
         
       </div>
       <!-- End Signup Modal Body -->
