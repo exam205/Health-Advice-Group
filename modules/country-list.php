@@ -1,4 +1,5 @@
-<select id="country" name="country" class="form-select" required>
+<?php // List of countries ?>
+<select id="countryInput" name="countryInput" class="form-select" required>
                 <option value="" selected disabled>Select an Option</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
