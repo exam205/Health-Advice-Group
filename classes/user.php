@@ -36,7 +36,10 @@ class User{
                     $last_name = $result['account_surname'];
                     $postcode = $result['account_postcode'];
                     $user = new User($id,$email,$first_name,$last_name,$postcode);
-                    $_SESSION['user'] = $user;
+                    $_SESSION['uid'] = $id;
+                    $_SESSION['postcode'] = $postcode;
+                    $_SESSION['firstname'] = $first_name;
+                    $_SESSION['surname'] = $last_name;
                     $_SESSION['success'] = "Logged in successfully!";
                     Common::goBack();
                 }
@@ -53,6 +56,13 @@ class User{
 
 
     }
+    function logout(){
+        unset($_SESSION['user']);
+        unset($_SESSION['loggedin']);
+        $_SESSION['success'] = "Logged out successfully!";
+        Common::goBack();
+    }
+
 
 }
 ?>

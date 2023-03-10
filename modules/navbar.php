@@ -29,7 +29,10 @@ if (isset($_SESSION['success'])){
   </div>
   <br >
   ';
+  unset($_SESSION['success']);
 }
+
+
 ?>
 
 <!-- Navbar -->
@@ -62,7 +65,9 @@ if (isset($_SESSION['success'])){
                 <a class="nav-link" href="#">My Account</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
+              <form action="functions/logout-action.php" method="POST">
+                <a class="nav-link" href="functions/logout-action.php">Log Out</a>
+              </form>
             </li>
 
         <?php } else { ?>

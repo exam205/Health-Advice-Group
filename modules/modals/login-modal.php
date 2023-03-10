@@ -26,6 +26,7 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#createAccountModal">Sign Up</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+        <input type="hidden" name="loginBtn">
         </form>
       </div>
       <!-- End Login Modal Footer -->
