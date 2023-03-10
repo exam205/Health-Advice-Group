@@ -11,6 +11,13 @@
       <!-- Login Modal Body -->
       <form action="functions/login-action.php" method="POST">
       <div class="modal-body">
+           <?php
+           if (isset($_SESSION['error'])&&$_SESSION['error']=="Incorrect Password and/or Email"){
+               echo "<div class='alert alert-danger' role='alert'>
+               {$_SESSION['error']}
+               </div>";
+           }
+           ?>
           <div class="form-group">
             <label for="emailInput" class="col-form-label">Email:</label>
             <input type="text" class="form-control" id="emailInput" name="emailInput">
@@ -25,8 +32,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#createAccountModal">Sign Up</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <input type="submit" class="btn btn-primary" name="submit" value="Submit">
-        <input type="hidden" name="loginBtn">
+        <input type="submit" class="btn btn-primary" name="submit" value="Log In">
         </form>
       </div>
       <!-- End Login Modal Footer -->

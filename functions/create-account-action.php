@@ -33,6 +33,11 @@
         $sql = "SELECT * FROM tbl_users WHERE users_email = '$email'"; //Check if email already exists
         $sql_query = $conn->query($sql);
         $sql_query->fetch_assoc();
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $_SESSION['error'] = "Invalid email address";
+            $_SESSION['error_loc'] = "createAccountModal";
+            Common::goBack();
+        }
         if ($sql_query->num_rows > 0){
             $_SESSION['error'] = "Email already exists";
             $_SESSION['error_loc'] = "createAccountModal";

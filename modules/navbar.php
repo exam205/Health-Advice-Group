@@ -12,7 +12,6 @@ if (isset($_SESSION['error']) && isset($_SESSION['error_loc'])){ // If error is 
     unset($_SESSION['error']);
     unset($_SESSION['error_loc']);
 }
-
 if (isset($_SESSION['success']) && isset($_SESSION['success_loc'])){ // If success is set for a modal, display it
     echo "<script>
     $(document).ready(function(){

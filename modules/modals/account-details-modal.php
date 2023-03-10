@@ -12,6 +12,15 @@
             <br >
             ';
         }
+        // Create an error alert on not completeing the additional details form
+        if (isset($_SESSION['error']) && $_SESSION['error'] == 'Please complete your account details') {
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>' . $_SESSION['error'] . '</strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <br >
+            ';
+        }
         ?>
       <div class="modal-header">
         <h5 class="modal-title" id="additionalDetailsModalLabel">We Still Need A Few More Details From You! </h5>

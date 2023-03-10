@@ -27,6 +27,7 @@ class User{
             $password = hash('sha256', $password . $salt);
             $dbpassword = $result['users_password'];
             $id = $result['users_id'];
+            $_SESSION['uid'] = $id;
             if ($password == $dbpassword){
                 $user_account_info_sql = "SELECT * FROM tbl_useraccountinfo WHERE account_user_id = '$id'"; 
                 $user_account_info_query = $conn->query($user_account_info_sql);
@@ -36,11 +37,16 @@ class User{
                     $last_name = $result['account_surname'];
                     $postcode = $result['account_postcode'];
                     $user = new User($id,$email,$first_name,$last_name,$postcode);
-                    $_SESSION['uid'] = $id;
                     $_SESSION['postcode'] = $postcode;
                     $_SESSION['firstname'] = $first_name;
                     $_SESSION['surname'] = $last_name;
                     $_SESSION['success'] = "Logged in successfully!";
+                    Common::goBack();
+                }
+                else{
+                    $_SESSION['error'] = "Please complete your account details";
+                    $_SESSION['error_loc'] = "additionalDetailsModal";
+                    $_SESSION['email'] = $email;
                     Common::goBack();
                 }
             }else{

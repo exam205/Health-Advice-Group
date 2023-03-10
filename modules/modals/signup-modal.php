@@ -17,7 +17,7 @@
                 <label for="emailInput" class="col-form-label">Email:</label>
                 <input type="email" class="form-control" id="emailInput" name="emailInput" required>
                 <?php
-                if(isset($_SESSION['error'])&&$_SESSION['error']=="Email already exists"){
+                if(isset($_SESSION['error'])&&($_SESSION['error']=="Email already exists" || $_SESSION['error']=="Invalid email address")){
                         echo "<div class='alert alert-danger' role='alert'>
                         {$_SESSION['error']}
                         </div>";
