@@ -67,6 +67,7 @@
                 <option value="Egypt">Egypt</option>
                 <option value="El Salvador">El Salvador</option>
                 <option value="Equatorial Guinea">Equatorial Guinea</option>
+                <option value="England">England</option>
                 <option value="Eritrea">Eritrea</option>
                 <option value="Estonia">Estonia</option>
                 <option value="Ethiopia">Ethiopia</option>
@@ -165,6 +166,7 @@
                 <option value="Niue">Niue</option>
                 <option value="Norfolk Island">Norfolk Island</option>
                 <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                <option value="Northern Ireland">Northern Ireland</option>
                 <option value="Norway">Norway</option>
                 <option value="Oman">Oman</option>
                 <option value="Pakistan">Pakistan</option>
@@ -193,6 +195,7 @@
                 <option value="San Marino">San Marino</option>
                 <option value="Sao Tome and Principe">Sao Tome and Principe</option>
                 <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Scotland">Scotland</option>
                 <option value="Senegal">Senegal</option>
                 <option value="Serbia">Serbia</option>
                 <option value="Seychelles">Seychelles</option>
@@ -240,6 +243,7 @@
                 <option value="Viet Nam">Viet Nam</option>
                 <option value="Virgin Islands, British">Virgin Islands, British</option>
                 <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                <option value="Wales">Wales</option>
                 <option value="Wallis and Futuna">Wallis and Futuna</option>
                 <option value="Western Sahara">Western Sahara</option>
                 <option value="Yemen">Yemen</option>

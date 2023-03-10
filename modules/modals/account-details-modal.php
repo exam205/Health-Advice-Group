@@ -44,6 +44,7 @@
             <div class="form-group">
                 <label for="postcodeInput" class="col-form-label">Postcode:</label>
                 <input type="text" class="form-control" id="postcodeInput" name="postcodeInput" maxlength="8" required>
+                <button type="button" class="btn btn-primary" id="postcodeLookup" name="postcodeLookup" onclick="lookupAddress()">Lookup Address</button>
             </div>
             <div class="form-group">
                 <label for="cityInput" class="col-form-label">City:</label>
@@ -64,4 +65,5 @@
     </div>
   </div>
 </div>
+
 <!-- End Additional Details Modal -->
