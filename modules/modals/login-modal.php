@@ -9,24 +9,24 @@
         </button>
       </div>
       <!-- Login Modal Body -->
+      <form action="functions/login-action.php" method="POST">
       <div class="modal-body">
-        <form>
           <div class="form-group">
             <label for="emailInput" class="col-form-label">Email:</label>
-            <input type="text" class="form-control" id="emailInput">
+            <input type="text" class="form-control" id="emailInput" name="emailInput">
           </div>
           <div class="form-group">
             <label for="emailInput" class="col-form-label">Password:</label>
-            <input type="password" class="form-control" id="passwordInput">
+            <input type="password" class="form-control" id="passwordInput" name="passwordInput">
           </div>
-        </form>
       </div>
       <!-- End Login Modal Body -->
       <!-- Login Modal Footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#createAccountModal">Sign Up</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Login</button>
+        <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+        </form>
       </div>
       <!-- End Login Modal Footer -->
     </div>
