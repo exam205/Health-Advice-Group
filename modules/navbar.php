@@ -12,6 +12,15 @@ if (isset($_SESSION['error']) && isset($_SESSION['error_loc'])){ // If error is 
     unset($_SESSION['error']);
     unset($_SESSION['error_loc']);
 }
+if (isset($_SESSION['error'])){//If error is set and there is no location, display it
+  echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>' . $_SESSION['error'] . '</strong> 
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <br >
+  ';
+  unset($_SESSION['error']);
+}
 if (isset($_SESSION['success']) && isset($_SESSION['success_loc'])){ // If success is set for a modal, display it
     echo "<script>
     $(document).ready(function(){
@@ -21,7 +30,7 @@ if (isset($_SESSION['success']) && isset($_SESSION['success_loc'])){ // If succe
     unset($_SESSION['success']);
     unset($_SESSION['success_loc']);
 }
-if (isset($_SESSION['success'])){
+if (isset($_SESSION['success'])){ //If success is set and there is no location, display it
   echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
   <strong>' . $_SESSION['success'] . '</strong> 
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

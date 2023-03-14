@@ -15,6 +15,23 @@
             Common::goBack();
         }
     }
+    function checkEmail($email,$conn){
+        $sql = "SELECT * FROM tbl_users WHERE users_email = '$email'"; //Check if email already exists
+        $sql_query = $conn->query($sql);
+        $sql_query->fetch_assoc();
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { //Check if email is valid
+            $_SESSION['error'] = "Invalid email address";
+            $_SESSION['error_loc'] = "createAccountModal";
+            Common::goBack();
+        }
+        if ($sql_query->num_rows > 0){
+            $_SESSION['error'] = "Email already exists";
+            $_SESSION['error_loc'] = "createAccountModal";
+            Common::goBack();
+        }else{
+            return false;
+        }
+    }
 
     function createAccount($password_input,$salt,$email_input,$conn){
         $password = hash('sha256', $password_input . $salt);
@@ -29,23 +46,7 @@
         Common::goBack();
     }
 
-    function checkEmail($email,$conn){
-        $sql = "SELECT * FROM tbl_users WHERE users_email = '$email'"; //Check if email already exists
-        $sql_query = $conn->query($sql);
-        $sql_query->fetch_assoc();
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $_SESSION['error'] = "Invalid email address";
-            $_SESSION['error_loc'] = "createAccountModal";
-            Common::goBack();
-        }
-        if ($sql_query->num_rows > 0){
-            $_SESSION['error'] = "Email already exists";
-            $_SESSION['error_loc'] = "createAccountModal";
-            Common::goBack();
-        }else{
-            return false;
-        }
-    }
+    
 
     $email = $_POST['emailInput'];
     $password = $_POST['passwordInput'];

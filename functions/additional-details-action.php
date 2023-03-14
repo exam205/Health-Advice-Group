@@ -2,6 +2,7 @@
 include_once '../classes/common-functions.php';
 include_once 'dbconnect.php';
 session_start();
+// $first_name = mysqli_escape_string($conn, $_POST['firstNameInput']);//Prevents SQL injection
 $first_name = strip_tags(mysqli_escape_string($conn,$_POST['firstNameInput']));
 $last_name = strip_tags(mysqli_escape_string($conn,$_POST['surnameInput']));
 $postcode = strip_tags(mysqli_escape_string($conn,$_POST['postcodeInput']));
