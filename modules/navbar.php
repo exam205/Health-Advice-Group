@@ -3,6 +3,8 @@ include_once 'modals/login-modal.php';
 include_once 'modals/signup-modal.php';
 include_once 'modals/account-details-modal.php';
 
+$page = $_SERVER['PHP_SELF'];
+
 if (isset($_SESSION['error']) && isset($_SESSION['error_loc'])){ // If error is set for a modal, display it
     echo "<script>
     $(document).ready(function(){
@@ -53,10 +55,10 @@ if (isset($_SESSION['success'])){ //If success is set and there is no location, 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link <?php echo $page=="/projects/Health-Advice-Group/index.php" ? "active" : ""?>" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Weather Forecast</a>
+          <a class="nav-link <?php echo $page=="/projects/Health-Advice-Group/weather-forecast.php" ? "active" : ""?>"href="weather-forecast.php">Weather Forecast</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Air Quality Data</a>

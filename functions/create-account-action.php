@@ -2,6 +2,7 @@
     include_once "../classes/common-functions.php";
     include_once "dbconnect.php";
     session_start();
+    
     function verifyPassword($password_input, $verify_password_input)// Verifies that the password and verify password inputs match
     {
         if($password_input == $verify_password_input)
@@ -15,6 +16,7 @@
             Common::goBack();
         }
     }
+
     function checkEmail($email,$conn){
         $sql = "SELECT * FROM tbl_users WHERE users_email = '$email'"; //Check if email already exists
         $sql_query = $conn->query($sql);
@@ -45,8 +47,6 @@
         $_SESSION['uid'] = $conn->insert_id;
         Common::goBack();
     }
-
-    
 
     $email = $_POST['emailInput'];
     $password = $_POST['passwordInput'];

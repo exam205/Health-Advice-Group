@@ -24,26 +24,28 @@ function getCity($postcode) //Use this function to get the city from the postcod
     return json_encode($return_value);
 }
 
-function getWeather(){
-    $api_key = "";
-    $get_coord_json = file_get_contents("https://api.openweathermap.org/geo/1.0/zip?zip=TR96RU,GB&appid=".$api_key."");
+function getWeather($postcode){
+    $api_key = "3749c116101c4562b014affabfb9fb40";
+    $get_coord_json = file_get_contents("https://api.openweathermap.org/geo/1.0/zip?zip=".$postcode.",GB&appid=".$api_key."");
     $get_coord_json = json_decode($get_coord_json, true);
     $lat = $get_coord_json["lat"];
     $lon = $get_coord_json["lon"];
     $get_weather_json = file_get_contents("https://api.openweathermap.org/data/2.5/weather?lat=".$lat."&lon=".$lon."&appid=".$api_key."");
     $get_weather_json = json_decode($get_weather_json, true);
+    return $get_weather_json;
    
 
 }
 
-function getAirQuality(){
-    $api_key = "";
-    $get_coord_json = file_get_contents("https://api.openweathermap.org/geo/1.0/zip?zip=TR96RU,GB&appid=".$api_key."");
+function getAirQuality($postcode){
+    $api_key = "3749c116101c4562b014affabfb9fb40";
+    $get_coord_json = file_get_contents("https://api.openweathermap.org/geo/1.0/zip?zip=".$postcode.",GB&appid=".$api_key."");
     $get_coord_json = json_decode($get_coord_json, true);
     $lat = $get_coord_json["lat"];
     $lon = $get_coord_json["lon"];
     $get_air_json = file_get_contents("https://api.openweathermap.org/data/2.5/air_pollution?lat=".$lat."&lon=".$lon."&appid=".$api_key."");
     $get_air_json = json_decode($get_air_json, true);
+    return $get_air_json;
 }
 
 if (isset($_GET["postcode"])) {
