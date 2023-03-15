@@ -13,6 +13,10 @@ class Common {
 
     public static function getWeatherData($postcode){
         $weather_data = getWeather($postcode);
+        if ($weather_data == false){
+           $_SESSION['error'] = "Invalid Location";
+           return Common::getWeatherData($_SESSION['postcode']);
+        }
         $is_day = $weather_data["current"]["is_day"];
         switch ($is_day) {
             case 0:
