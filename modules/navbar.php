@@ -61,7 +61,7 @@ if (isset($_SESSION['success'])){ //If success is set and there is no location, 
           <a class="nav-link <?php echo $page=="/projects/Health-Advice-Group/weather-forecast.php" ? "active" : ""?>"href="weather-forecast.php">Weather Forecast</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Air Quality Data</a>
+          <a class="nav-link <?php echo $page=="/projects/Health-Advice-Group/air-quality.php" ? "active" : ""?>"href="air-quality.php">Air Quality Data</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Advice</a>

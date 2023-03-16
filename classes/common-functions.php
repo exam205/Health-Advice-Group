@@ -15,7 +15,12 @@ class Common {
         $weather_data = getWeather($postcode);
         if ($weather_data == false){
            $_SESSION['error'] = "Invalid Location";
-           return Common::getWeatherData($_SESSION['postcode']);
+           if (isset($_SESSION["postcode"])){;
+            return Common::getWeatherData($_SESSION['postcode']);
+           }else{
+            return Common::getWeatherData("Birmingham");
+           }
+           
         }
         $is_day = $weather_data["current"]["is_day"];
         switch ($is_day) {
@@ -53,7 +58,7 @@ class Common {
             "humidity" => $weather_data["current"]["humidity"],
             "feels_like" => $weather_data["current"]["feelslike_c"],
             "uv" => $weather_data["current"]["uv"],
-            "aqi" => $weather_data["current"]["air_quality"]["us-epa-index"],
+            "aqi" => $weather_data["current"]["air_quality"]["gb-defra-index"],
             "co" => $weather_data["current"]["air_quality"]["co"],
             "no2" => $weather_data["current"]["air_quality"]["no2"],
             "o3" => $weather_data["current"]["air_quality"]["o3"],

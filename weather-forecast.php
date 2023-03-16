@@ -17,14 +17,19 @@ include_once 'classes/common-functions.php';
 </body> 
 
 <?php 
-if (isset($_GET['forecastpostcode'])){
+if (isset($_GET['forecastpostcode'])){ // If the user has searched for a postcode
     $temppostcode = $_GET['forecastpostcode'];
     $weather_data = Common::getWeatherData($temppostcode);
     $alerts = $weather_data["alerts"];
 }
-else if (isset($_SESSION["loggedin"]) && $_SESSION==True){
+else if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]==True){ // If the user is logged in
     $weather_data = Common::getWeatherData($_SESSION['postcode']);
     $temppostcode = $_SESSION['postcode'];
+    $alerts = $weather_data["alerts"];
+}
+if (isset($weather_data) == False){ // If the user has not searched for a postcode or logged in
+    $weather_data = Common::getWeatherData("Birmingham");
+    $temppostcode = "Birmingham";
     $alerts = $weather_data["alerts"];
 }
 ?>
