@@ -15,9 +15,9 @@
         
             <div class="form-group">
                 <label for="emailInput" class="col-form-label">Email:</label>
-                <input type="email" class="form-control" id="emailInput" name="emailInput" required>
+                <input type="email" class="form-control" id="emailInput" name="emailInput" >
                 <?php
-                if(isset($_SESSION['error'])&&($_SESSION['error']=="Email already exists" || $_SESSION['error']=="Invalid email address")){
+                if(isset($_SESSION['error'])&&($_SESSION['error']=="Email already exists" || $_SESSION['error']=="Invalid email address")){ //if the error is that the email already exists or is invalid
                         echo "<div class='alert alert-danger' role='alert'>
                         {$_SESSION['error']}
                         </div>";
@@ -26,13 +26,13 @@
             </div>
             <div class="form-group">
                 <label for="passwordInput" class="col-form-label">Password:</label>
-                <input type="password" class="form-control" id="passwordInput" name="passwordInput" required>
+                <input type="password" class="form-control" id="passwordInput" name="passwordInput" >
             </div>
             <div class="form-group">
                 <label for="confirmPasswordInput" class="col-form-label">Confirm Password:</label>
-                <input type="password" class="form-control" id="confirmPasswordInput" name="confirmPasswordInput" required>
+                <input type="password" class="form-control" id="confirmPasswordInput" name="confirmPasswordInput" >
                 <?php
-                    if(isset($_SESSION['error'])&&$_SESSION['error']=="Passwords do not match"){
+                    if(isset($_SESSION['error'])&&$_SESSION['error']=="Passwords do not match"){ //if the error is that the passwords don't match
                         echo "<div class='alert alert-danger' role='alert'>
                         {$_SESSION['error']}
                         </div>";

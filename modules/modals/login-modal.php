@@ -12,7 +12,7 @@
       <form action="functions/login-action.php" method="POST">
       <div class="modal-body">
            <?php
-           if (isset($_SESSION['error'])&&$_SESSION['error']=="Incorrect Password and/or Email"){
+           if (isset($_SESSION['error'])&&$_SESSION['error']=="Incorrect Password and/or Email"){ //if the error is that the password and/or email is incorrect
                echo "<div class='alert alert-danger' role='alert'>
                {$_SESSION['error']}
                </div>";

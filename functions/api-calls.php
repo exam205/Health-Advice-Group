@@ -1,5 +1,5 @@
 <?php
-function getCity($postcode)
+function getCity($postcode) //Use this function to get the city from the postcode
 {
     $ch = curl_init();
 
@@ -23,6 +23,7 @@ function getCity($postcode)
     $return_value = $json["results"][$postcode]["0"];
     return json_encode($return_value);
 }
+
 if (isset($_GET["postcode"])) {
     echo getCity($_GET["postcode"]);
 }
