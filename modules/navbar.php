@@ -5,48 +5,10 @@ include_once 'modals/account-details-modal.php';
 
 $page = $_SERVER['PHP_SELF'];
 
-if (isset($_SESSION['error']) && isset($_SESSION['error_loc'])){ // If error is set for a modal, display it
-    echo "<script>
-    $(document).ready(function(){
-        $('#{$_SESSION['error_loc']}').modal('show');
-    });
-    </script>";
-    unset($_SESSION['error']);
-    unset($_SESSION['error_loc']);
-}
-if (isset($_SESSION['error'])){//If error is set and there is no location, display it
-  echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>' . $_SESSION['error'] . '</strong> 
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-  <br >
-  ';
-  unset($_SESSION['error']);
-}
-if (isset($_SESSION['success']) && isset($_SESSION['success_loc'])){ // If success is set for a modal, display it
-    echo "<script>
-    $(document).ready(function(){
-        $('#{$_SESSION['success_loc']}').modal('show');
-    });
-    </script>";
-    unset($_SESSION['success']);
-    unset($_SESSION['success_loc']);
-}
-if (isset($_SESSION['success'])){ //If success is set and there is no location, display it
-  echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>' . $_SESSION['success'] . '</strong> 
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-  <br >
-  ';
-  unset($_SESSION['success']);
-}
-
-
 ?>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Health Advice Group</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,3 +52,43 @@ if (isset($_SESSION['success'])){ //If success is set and there is no location, 
   </div>
 </nav>
 <!-- End Navbar -->
+
+<?php
+if (isset($_SESSION['error']) && isset($_SESSION['error_loc'])){ // If error is set for a modal, display it
+  echo "<script>
+  $(document).ready(function(){
+      $('#{$_SESSION['error_loc']}').modal('show');
+  });
+  </script>";
+  unset($_SESSION['error']);
+  unset($_SESSION['error_loc']);
+}
+if (isset($_SESSION['error'])){//If error is set and there is no location, display it
+echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+<strong>' . $_SESSION['error'] . '</strong> 
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<br >
+';
+unset($_SESSION['error']);
+}
+if (isset($_SESSION['success']) && isset($_SESSION['success_loc'])){ // If success is set for a modal, display it
+  echo "<script>
+  $(document).ready(function(){
+      $('#{$_SESSION['success_loc']}').modal('show');
+  });
+  </script>";
+  unset($_SESSION['success']);
+  unset($_SESSION['success_loc']);
+}
+if (isset($_SESSION['success'])){ //If success is set and there is no location, display it
+echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+<strong>' . $_SESSION['success'] . '</strong> 
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<br >
+';
+unset($_SESSION['success']);
+}
+
+?>

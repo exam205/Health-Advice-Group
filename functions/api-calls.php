@@ -24,17 +24,6 @@ function getCity($postcode) //Use this function to get the city from the postcod
     return json_encode($return_value);
 }
 
-function getWeather($postcode){
-    error_reporting(0);
-    $weather_api_key = "e2e8aca550094ed194a94435231503";
-    $get_weather_json = file_get_contents("https://api.weatherapi.com/v1/forecast.json?key=".$weather_api_key."&q=".$postcode."&aqi=yes&alerts=yes");
-    if ($get_weather_json == false) {
-        return false;
-    }
-    $get_weather_json = json_decode($get_weather_json, true);
-    return $get_weather_json;
-}
-
 if (isset($_GET["postcode"])) {
     echo getCity($_GET["postcode"]);
 }

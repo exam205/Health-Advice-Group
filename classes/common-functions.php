@@ -1,5 +1,4 @@
 <?php
-include_once "functions/api-calls.php";
 class Common {
     public static function goBack(){
         if(isset($_SERVER['HTTP_REFERER'])){
@@ -12,13 +11,13 @@ class Common {
     }
 
     public static function getWeatherData($postcode){
-        $weather_data = getWeather($postcode);
+        $weather_data = Common::getWeather($postcode);
         if ($weather_data == false){
            $_SESSION['error'] = "Invalid Location";
            if (isset($_SESSION["postcode"])){;
             return Common::getWeatherData($_SESSION['postcode']);
            }else{
-            return Common::getWeatherData("Birmingham");
+            return Common::getWeatherData("London");
            }
            
         }
@@ -70,5 +69,17 @@ class Common {
         return $weather_data_array;
 
     }
+
+    public static function getWeather($postcode){
+        error_reporting(0);
+        $weather_api_key = "e2e8aca550094ed194a94435231503";
+        $get_weather_json = file_get_contents("https://api.weatherapi.com/v1/forecast.json?key=".$weather_api_key."&q=".$postcode."&aqi=yes&alerts=yes");
+        if ($get_weather_json == false) {
+            return false;
+        }
+        $get_weather_json = json_decode($get_weather_json, true);
+        return $get_weather_json;
+    }
+
 }
  ?>

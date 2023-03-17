@@ -39,7 +39,7 @@ if (isset($weather_data) == False){ // If the user has not searched for a postco
         <div class="col">
             <form action="weather-forecast.php" method="get">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="forecastpostcode" placeholder="Enter your postcode or City" aria-label="Enter your postcode" aria-describedby="button-addon2">
+                    <input type="text" class="form-control" name="forecastpostcode" placeholder="Enter your Postcode or City" aria-label="Enter your postcode" aria-describedby="button-addon2">
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
                 </div>
             </form>

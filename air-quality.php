@@ -50,7 +50,7 @@ $bgcolour = $aqi_colour;
         <div class="col">
             <form action="air-quality.php" method="get">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="forecastpostcode" placeholder="Enter your postcode or City" aria-label="Enter your postcode" aria-describedby="button-addon2">
+                    <input type="text" class="form-control" name="forecastpostcode" placeholder="Enter your Postcode or City" aria-label="Enter your postcode" aria-describedby="button-addon2">
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
                 </div>
             </form>
@@ -123,7 +123,7 @@ $bgcolour = $aqi_colour;
             <h2>CO</h2>
             <p>CO is carbon monoxide. It can cause headaches, dizziness, and nausea. It can also cause heart problems.</p>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: <?php echo ($weather_data["co"] / 200) * 100?>%" aria-valuenow="<?php echo $weather_data["co"]?>" aria-valuemin="0" aria-valuemax="200"></div>
+                <div class="progress-bar" role="progressbar" style="width: <?php echo ($weather_data["co"] / 10000) * 100?>%" aria-valuenow="<?php echo $weather_data["co"]?>" aria-valuemin="0" aria-valuemax="10000"></div>
             </div>
             <h3><?php echo round($weather_data["co"],3)?>µg/m³</h3>
         </div>
@@ -152,6 +152,13 @@ $bgcolour = $aqi_colour;
             <h3><?php echo round($weather_data["o3"],3)?>µg/m³</h3>
         </div>
     </div>
+    <!-- Trademakr says pollutant bars percentage based on UK DEFRA Guidelines -->
+    <div class="row">
+        <div class="col">
+            <p class="text-muted">Pollutant bars percentage based on UK DEFRA Guidelines</p>
+        </div>
+    </div>
 </div>
+<div class="divider mb-0"></div>
 </body>
 </html>
