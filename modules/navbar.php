@@ -51,6 +51,7 @@ $page = $_SERVER['PHP_SELF'];
     </div>
   </div>
 </nav>
+
 <!-- End Navbar -->
 
 <?php

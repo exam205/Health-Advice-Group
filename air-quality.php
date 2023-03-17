@@ -20,7 +20,7 @@ else if (isset($_SESSION["loggedin"]) && $_SESSION==True){
     $temppostcode = $_SESSION['postcode'];
 }
 if (isset($weather_data) == False){ // If the user has not searched for a postcode or logged in
-    $weather_data = Common::getWeatherData("Birmingham");
+    $weather_data = Common::getWeatherData("London");
     $temppostcode = "Birmingham";
     $alerts = $weather_data["alerts"];
 }
