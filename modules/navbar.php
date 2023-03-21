@@ -10,7 +10,7 @@ $page = $_SERVER['PHP_SELF'];
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Health Advice Group</a>
+    <a class="navbar-brand" href="index.php">Health Advice Group</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,8 +25,15 @@ $page = $_SERVER['PHP_SELF'];
         <li class="nav-item">
           <a class="nav-link <?php echo $page=="/projects/Health-Advice-Group/air-quality.php" ? "active" : ""?>"href="air-quality.php">Air Quality Data</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Advice</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Advice
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item <?php echo $page=="/projects/Health-Advice-Group/advice-main-page.php" ? "active" : ""?>" href="advice-main-page.php">Advice Homepage</a></li>
+            <li><a class="dropdown-item <?php echo $page=="/projects/Health-Advice-Group/weather-health-advice.php" ? "active" : ""?>" href="weather-health-advice.php">Weather Health Advice</a></li>
+            <li><a class="dropdown-item <?php echo $page=="/projects/Health-Advice-Group/environmental-health-advice.php" ? "active" : ""?>" href="environmental-health-advice.php">Environmental Health Advice</a></li>
+          </ul>
         </li>
         <?php 
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { //If user logged in then display these links ?> 

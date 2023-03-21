@@ -23,6 +23,7 @@ if (isset($weather_data) == False){ // If the user has not searched for a postco
     $weather_data = Common::getWeatherData("London");
     $temppostcode = "London";
 }
+
 //Change the aqi background colour based on how high it is
 $aqi_value = (int)$weather_data["aqi"];
 if ($aqi_value >=1 && $aqi_value <=3){
@@ -42,6 +43,7 @@ if ($aqi_value >=1 && $aqi_value <=3){
     $advice_text_at_risk = "Adults and children with lung problems, adults with heart problems, and older people, should avoid strenuous physical activity. People with asthma may find they need to use their reliever inhaler more often.";
 }
 $bgcolour = $aqi_colour;
+
 ?>
 <!-- Search -->
 <div class="container" style="margin-top:50px">
