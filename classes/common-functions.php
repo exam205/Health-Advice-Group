@@ -12,7 +12,8 @@ class Common {
 
     public static function getWeatherData($postcode){
         $weather_data = Common::getWeather($postcode);
-        if ($weather_data == false){
+
+        if ($weather_data == false){ // If api call fails, set error message then provide weather for London or user's postcode
            $_SESSION['error'] = "Invalid Location";
            if (isset($_SESSION["postcode"])){;
             return Common::getWeatherData($_SESSION['postcode']);
@@ -21,7 +22,8 @@ class Common {
            }
            
         }
-        $is_day = $weather_data["current"]["is_day"];
+
+        $is_day = $weather_data["current"]["is_day"]; // Get day or night icon
         switch ($is_day) {
             case 0:
                 $is_day = "night";
@@ -30,14 +32,17 @@ class Common {
                 $is_day = "day";
                 break;
         }
-        $icon = $weather_data["current"]["condition"]["icon"];
+
+        $icon = $weather_data["current"]["condition"]["icon"]; // Setting icon URL
         $icon_exploded = explode("/", $icon);
         $icon_number = $icon_exploded[6];
         $icon_url = "images/weather-icons/".$is_day."/".$icon_number."";
-        $local_time = $weather_data["location"]["localtime"];
+
+        $local_time = $weather_data["location"]["localtime"]; // Setting local time
         $local_time_exploded = explode(" ", $local_time);
         $local_time = $local_time_exploded[1];
-        if ($weather_data["alerts"]["alert"] == null){
+
+        if ($weather_data["alerts"]["alert"] == null){ // If there are no alerts, set alerts to "No alerts"
             $alerts_array = array(
                 "alerts" => "No alerts",
             );
@@ -46,7 +51,8 @@ class Common {
                 "alerts" => $weather_data["alerts"],
             );
         }
-        $weather_data_array = array(
+
+        $weather_data_array = array( // Putting all data in array
             "location" => $weather_data["location"]["name"].", ".$weather_data["location"]["region"].", ".$weather_data["location"]["country"],
             "local_time" => $local_time,
             "temperature" => $weather_data["current"]["temp_c"],
@@ -71,12 +77,14 @@ class Common {
     }
 
     public static function getWeather($postcode){
-        error_reporting(0);
+        error_reporting(0); // Turn off error reporting
         $weather_api_key = "e2e8aca550094ed194a94435231503";
         $get_weather_json = file_get_contents("https://api.weatherapi.com/v1/forecast.json?key=".$weather_api_key."&q=".$postcode."&aqi=yes&alerts=yes");
-        if ($get_weather_json == false) {
+
+        if ($get_weather_json == false) { // If api call fails, return false
             return false;
         }
+
         $get_weather_json = json_decode($get_weather_json, true);
         return $get_weather_json;
     }

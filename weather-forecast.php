@@ -14,8 +14,6 @@ include_once 'classes/common-functions.php';
 </head>
 <body>
     <?php include 'modules/navbar.php'; ?>
-</body> 
-
 <?php 
 if (isset($_GET['forecastpostcode'])){ // If the user has searched for a postcode
     $temppostcode = $_GET['forecastpostcode'];
@@ -29,11 +27,12 @@ else if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]==True){ // If the
 }
 if (isset($weather_data) == False){ // If the user has not searched for a postcode or logged in
     $weather_data = Common::getWeatherData("London");
-    $temppostcode = "Birmingham";
+    $temppostcode = "London";
     $alerts = $weather_data["alerts"];
 }
 ?>
-<!-- Create a weather forecast search bar -->
+
+<!-- Weather forecast search bar -->
 <div class="container" style="margin-top:50px">
     <div class="row">
         <div class="col">
@@ -46,7 +45,8 @@ if (isset($weather_data) == False){ // If the user has not searched for a postco
         </div>
     </div>
 </div>
-<!-- Display the weather forecast -->
+<!-- End weather forecast search bar -->
+<!-- Weather forecast -->
 <div class="divider mb-0"></div>
 <div class="container bg-dark px-4 py-5 text-light" style="max-width:100% !important">
     <div class="row">
@@ -60,7 +60,6 @@ if (isset($weather_data) == False){ // If the user has not searched for a postco
         </div>
         <div class="col-lg-6">
             <h1 class="display-5 fw-bold lh-1 mb-3"><?php echo $weather_data["weather"]; ?></h1>
-            <!-- Display the air quality -->
             <p class="lead">Air Quality Index: <?php echo $weather_data["aqi"]; ?></p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                 <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" style="pointer-events: none;">Temperature: <?php echo $weather_data["temperature"]; ?>°C</button>
@@ -74,13 +73,12 @@ if (isset($weather_data) == False){ // If the user has not searched for a postco
         </div>
     </div>
 </div>
+<!-- End weather forecast -->
 <div class="divider mb-0"></div>
 <div class="container bg-dark px-4 py-5 text-light" style="max-width:100% !important">
     <div class="row flex-lg-row g-5 py-5">
         <div class="col-lg-6">
-        <!-- Uv Level and Pm10 Level -->
-            <!-- Creaate a box to put the uv value in an colour it based on the level -->
-            <?php if ($weather_data["uv"] < 3) { ?>
+            <?php if ($weather_data["uv"] < 3) { // UV level if statements ?>
                 <div class="alert alert-success" role="alert">
                     <h4 class="alert-heading">UV Level: <?php echo $weather_data["uv"] ?></h4>
                     <p>Low risk of harm from unprotected sun exposure.</p>
@@ -108,8 +106,8 @@ if (isset($weather_data) == False){ // If the user has not searched for a postco
             <?php }?>
         </div>
         <div class="col-lg-6">
-            <!-- Create boxes for each alerts -->
             <?php
+            //  Create boxes for each alerts
             $tempheadline = "";
             if ($alerts["alerts"] == "No alerts"){
                 echo "<div class='alert alert-success' role='alert'>No Alerts</div>";
@@ -138,4 +136,5 @@ if (isset($weather_data) == False){ // If the user has not searched for a postco
     </div>
 </div>
 <div class="divider mb-0"></div>
+</body>
 </html>

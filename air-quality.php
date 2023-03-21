@@ -11,20 +11,19 @@
 <body>
 <?php include 'modules/navbar.php'; ?>
 <?php 
-if (isset($_GET['forecastpostcode'])){
+if (isset($_GET['forecastpostcode'])){ // If the user has searched for a postcode
     $temppostcode = $_GET['forecastpostcode'];
     $weather_data = Common::getWeatherData($temppostcode);
 }
-else if (isset($_SESSION["loggedin"]) && $_SESSION==True){
+else if (isset($_SESSION["loggedin"]) && $_SESSION==True){ // If the user is logged in
     $weather_data = Common::getWeatherData($_SESSION['postcode']);
     $temppostcode = $_SESSION['postcode'];
 }
 if (isset($weather_data) == False){ // If the user has not searched for a postcode or logged in
     $weather_data = Common::getWeatherData("London");
-    $temppostcode = "Birmingham";
-    $alerts = $weather_data["alerts"];
+    $temppostcode = "London";
 }
-//change the aqi background colour based on how high it is
+//Change the aqi background colour based on how high it is
 $aqi_value = (int)$weather_data["aqi"];
 if ($aqi_value >=1 && $aqi_value <=3){
     $aqi_colour = "green";
@@ -44,7 +43,7 @@ if ($aqi_value >=1 && $aqi_value <=3){
 }
 $bgcolour = $aqi_colour;
 ?>
-    <!-- Create a weather forecast search bar -->
+<!-- Search -->
 <div class="container" style="margin-top:50px">
     <div class="row">
         <div class="col">
@@ -57,7 +56,8 @@ $bgcolour = $aqi_colour;
         </div>
     </div>
 </div>
-<!-- Display the weather forecast -->
+<!-- End Search -->
+<!-- AQI -->
 <div class="divider mb-0"></div>
 <div class="container bg-dark px-4 py-5 text-light" style="max-width:100% !important">
     <div class="row">
@@ -76,7 +76,6 @@ $bgcolour = $aqi_colour;
         </div>
         <div class="col-lg-6">
         </div>
-        <!-- Everyone advice text in an alert -->
         <div class="col-lg-6">
             <div class="alert alert-info" role="alert">
                 <h4 class="alert-heading">Advice for everyone</h4>
@@ -85,7 +84,6 @@ $bgcolour = $aqi_colour;
         </div>
         <div class="col-lg-6">
             <?php if (isset($advice_text_at_risk)){?>
-            <!-- At risk advice text in an alert -->
             <div class="alert alert-warning" role="alert">
                 <h4 class="alert-heading">Advice for people at risk</h4>
                 <p><?php echo $advice_text_at_risk; ?></p>
@@ -94,8 +92,9 @@ $bgcolour = $aqi_colour;
         </div>
     </div>
 </div>
+<!-- End AQI -->
 <div class="divider mb-0"></div>
-<!-- Display the pollutants -->
+<!-- Pollutants -->
 <div class="container bg-dark px-4 py-5 text-light" style="max-width:100% !important">
     <div class="row">
         <div class="col">
@@ -152,13 +151,13 @@ $bgcolour = $aqi_colour;
             <h3><?php echo round($weather_data["o3"],3)?>µg/m³</h3>
         </div>
     </div>
-    <!-- Trademakr says pollutant bars percentage based on UK DEFRA Guidelines -->
     <div class="row">
         <div class="col">
             <p class="text-muted">Pollutant bars percentage based on UK DEFRA Guidelines</p>
         </div>
     </div>
 </div>
+<!-- End pollutants -->
 <div class="divider mb-0"></div>
 </body>
 </html>
