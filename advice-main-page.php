@@ -18,7 +18,7 @@
                     <p class="text-center">Get health advice relating to weather issues</p>
                     <!-- Centered Button that goes to advice-main-page.php -->
                     <div class="text-center">
-                        <a href="advice-main-page.php"><button type="button" class="btn btn-outline-light btn-lg">Take Me There!</button></a>
+                        <a href="weather-health-advice.php"><button type="button" class="btn btn-outline-light btn-lg">Take Me There!</button></a>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                     <p class="text-center">Get health advice relating environmental issues</p>
                     <!-- Centered Button that goes to advice-main-page.php -->
                     <div class="text-center">
-                        <a href="advice-main-page.php"><button type="button" class="btn btn-outline-light btn-lg">Take Me There!</button></a>
+                        <a href="environmental-health-advice.php"><button type="button" class="btn btn-outline-light btn-lg">Take Me There!</button></a>
                     </div>
                 </div>
             </div>

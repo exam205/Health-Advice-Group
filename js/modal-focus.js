@@ -1,5 +1,6 @@
 
 window.onload = function () {
+    var test = "test"
     var modals = document.getElementsByClassName('modal');
     for (var modal = 0; modal < modals.length; modal++) {
         modals[modal].addEventListener('show.bs.modal', function () {

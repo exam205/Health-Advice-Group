@@ -10,7 +10,8 @@ $page = $_SERVER['PHP_SELF'];
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php"><h3><strong>Health Advice Group</strong></h3></a>
+    <a class="navbar-brand d-none d-sm-block" href="index.php"><h3><strong>Health Advice Group</strong></h3></a>
+    <a class="navbar-brand d-block d-sm-none"><h3><strong>Health Advice Group</strong></h3></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
