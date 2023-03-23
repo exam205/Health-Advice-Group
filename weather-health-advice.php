@@ -28,33 +28,33 @@
                 </a>
                 <a class="list-group-item list-group-item-action py-3 lh-sm" id="test2" data-bs-toggle="list" href="#list-2" role="tab" aria-controls="list-2">
                     <div class="d-flex w-100 align-items-center justify-content-between">
-                    <h3><strong class="mb-1">List group item heading</strong></h3>
+                        <h3><strong class="mb-1">Title</strong></h3>
                     </div>
-                    <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                    <div class="col-10 mb-1">Additional Info</div>
                 </a>
                 <a class="list-group-item list-group-item-action py-3 lh-sm" id="test3" data-bs-toggle="list" href="#list-3" role="tab" aria-controls="list-3">
                     <div class="d-flex w-100 align-items-center justify-content-between">
-                    <h3><strong class="mb-1">List group item heading</strong></h3>
+                        <h3><strong class="mb-1">Title</strong></h3>
                     </div>
-                    <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                    <div class="col-10 mb-1">Additional Info</div>
                 </a>
                 <a class="list-group-item list-group-item-action py-3 lh-sm" id="test4" data-bs-toggle="list" href="#list-4" role="tab" aria-controls="list-4">
                     <div class="d-flex w-100 align-items-center justify-content-between">
-                    <h3><strong class="mb-1">List group item heading</strong></h3>
+                        <h3><strong class="mb-1">Title</strong></h3>
                     </div>
-                    <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                    <div class="col-10 mb-1">Additional Info</div>
                 </a>
                 <a class="list-group-item list-group-item-action py-3 lh-sm" id="test5" data-bs-toggle="list" href="#list-5" role="tab" aria-controls="list-5">
                     <div class="d-flex w-100 align-items-center justify-content-between">
-                    <h3><strong class="mb-1">List group item heading</strong></h3>
+                        <h3><strong class="mb-1">Title</strong></h3>
                     </div>
-                    <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                    <div class="col-10 mb-1">Additional Info</div>
                 </a>
                 <a class="list-group-item list-group-item-action py-3 lh-sm" id="test6" data-bs-toggle="list" href="#list-6" role="tab" aria-controls="list-6">
                     <div class="d-flex w-100 align-items-center justify-content-between">
-                    <h3><strong class="mb-1">List group item heading</strong></h3>
+                        <h3><strong class="mb-1">Title</strong></h3>
                     </div>
-                    <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                    <div class="col-10 mb-1">Additional Info</div>
                 </a>
             </div>
         </div>
@@ -77,33 +77,33 @@
                     </a>
                     <a class="list-group-item list-group-item-action py-3 lh-sm" id="test2" data-bs-toggle="list" href="#list-2" role="tab" aria-controls="list-2">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                        <h3><strong class="mb-1">List group item heading</strong></h3>
+                            <h3><strong class="mb-1">Title</strong></h3>
                         </div>
-                        <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                        <div class="col-10 mb-1">Additional Info</div>
                     </a>
                     <a class="list-group-item list-group-item-action py-3 lh-sm" id="test3" data-bs-toggle="list" href="#list-3" role="tab" aria-controls="list-3">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                        <h3><strong class="mb-1">List group item heading</strong></h3>
+                            <h3><strong class="mb-1">Title</strong></h3>
                         </div>
-                        <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                        <div class="col-10 mb-1">Additional Info</div>
                     </a>
                     <a class="list-group-item list-group-item-action py-3 lh-sm" id="test4" data-bs-toggle="list" href="#list-4" role="tab" aria-controls="list-4">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                        <h3><strong class="mb-1">List group item heading</strong></h3>
+                            <h3><strong class="mb-1">Title</strong></h3>
                         </div>
-                        <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                        <div class="col-10 mb-1">Additional Info</div>
                     </a>
                     <a class="list-group-item list-group-item-action py-3 lh-sm" id="test5" data-bs-toggle="list" href="#list-5" role="tab" aria-controls="list-5">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                        <h3><strong class="mb-1">List group item heading</strong></h3>
+                            <h3><strong class="mb-1">Title</strong></h3>
                         </div>
-                        <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                        <div class="col-10 mb-1">Additional Info</div>
                     </a>
                     <a class="list-group-item list-group-item-action py-3 lh-sm" id="test6" data-bs-toggle="list" href="#list-6" role="tab" aria-controls="list-6">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                        <h3><strong class="mb-1">List group item heading</strong></h3>
+                            <h3><strong class="mb-1">Title</strong></h3>
                         </div>
-                        <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                        <div class="col-10 mb-1">Additional Info</div>
                     </a>
                 </div>
             </div>
