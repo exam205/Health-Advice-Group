@@ -12,3 +12,40 @@
     top: 0;
     z-index: 1020;
 }
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+}
+.b-example-divider {
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, .1), inset 0 0.125em 0.5em rgba(0, 0, 0, .15);
+}
+
+body{
+    background-color: #f5f5f5;
+}
+
+.navbar-text {
+    color: #e1e1e1 !important; 
+}
+
+.advice-images {
+  
+    width: 100%;
+}
+
+.float-button {
+    position: fixed;
+    left: -13px;
+    top: 55px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    }
+
+
+.hide-button {
+    display: none!important;
+}

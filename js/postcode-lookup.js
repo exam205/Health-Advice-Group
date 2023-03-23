@@ -1,3 +1,4 @@
+// Description: This code is used to lookup the city and country of a postcode.
 function lookupAddress() {
     var postcode = document.querySelector("input[name=postcodeInput]").value;
     var city = document.querySelector("input[name=cityInput]");

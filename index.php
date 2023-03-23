@@ -44,10 +44,20 @@
                     <p>Get the local air quality data. Includes pollutant percentages!</p>
                     <form action="air-quality.php" method="get">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" name="forecastpostcode" placeholder="Enter your Postcode or City" aria-label="Enter your postcode" aria-describedby="button-addon2" value="<?php echo (isset($_SESSION['postcode']) ? $_SESSION['postcode']:"London")?>">
+                            <input type="text" class="form-control" name="airqualitypostcode" placeholder="Enter your Postcode or City" aria-label="Enter your postcode" aria-describedby="button-addon2" value="<?php echo (isset($_SESSION['postcode']) ? $_SESSION['postcode']:"London")?>">
                             <button class="btn btn-outline-light" type="submit" id="button-addon2">Search</button>
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-bg-dark border rounded-3">
+                    <h2>Advice Homepage</h2>
+                    <p>Get health advice relating to weather and/or environmental issues</p>
+                    <!-- Centered Button that goes to advice-main-page.php -->
+                    <div class="text-center">
+                        <a href="advice-main-page.php"><button type="button" class="btn btn-outline-light btn-lg">Take Me There!</button></a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
-
+// Description: This script is used to set required on the inputs of a modal when it is shown.
 window.onload = function () {
+    var test = "test"
     var modals = document.getElementsByClassName('modal');
     for (var modal = 0; modal < modals.length; modal++) {
         modals[modal].addEventListener('show.bs.modal', function () {

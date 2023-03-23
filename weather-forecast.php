@@ -136,5 +136,4 @@ if (isset($weather_data) == False){ // If the user has not searched for a postco
     </div>
 </div>
 <div class="divider mb-0"></div>
-</body>
 </html>
