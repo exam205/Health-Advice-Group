@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php include 'modules/navbar.php'; ?>
-    <button class="btn btn-primary float-button d-block d-sm-none" id="mobile-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-mobile" role="button">
+    <button class="btn float-button d-block d-sm-none" id="mobile-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-mobile" role="button">
     <i class="bi bi-chevron-double-right"></i>
     </button>
     <main class="d-flex flex-nowrap" style="margin-top:2rem;">
@@ -22,9 +22,9 @@
             <div class="list-group list-group-flush border-bottom scrollarea" id="list-tab" role="tablist">
                 <a class="list-group-item list-group-item-action py-3 lh-sm active" id="test1" data-bs-toggle="list" href="#list-1" role="tab" aria-controls="list-1">
                     <div class="d-flex w-100 align-items-center justify-content-between">
-                    <h3><strong class="mb-1">List group item heading</strong></h3>
+                    <h3><strong class="mb-1">Welcome</strong></h3>
                     </div>
-                    <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                    <div class="col-10 mb-1"></div>
                 </a>
                 <a class="list-group-item list-group-item-action py-3 lh-sm" id="test2" data-bs-toggle="list" href="#list-2" role="tab" aria-controls="list-2">
                     <div class="d-flex w-100 align-items-center justify-content-between">
@@ -71,9 +71,9 @@
                 <div class="list-group list-group-flush border-bottom scrollarea" id="list-tab" role="tablist">
                     <a class="list-group-item list-group-item-action py-3 lh-sm active" id="test1" data-bs-toggle="list" href="#list-1" role="tab" aria-controls="list-1">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                        <h3><strong class="mb-1">List group item heading</strong></h3>
+                        <h3><strong class="mb-1">Welcome</strong></h3>
                         </div>
-                        <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                        <div class="col-10 mb-1"></div>
                     </a>
                     <a class="list-group-item list-group-item-action py-3 lh-sm" id="test2" data-bs-toggle="list" href="#list-2" role="tab" aria-controls="list-2">
                         <div class="d-flex w-100 align-items-center justify-content-between">

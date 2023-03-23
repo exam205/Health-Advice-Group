@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php include 'modules/navbar.php'; ?>
-    <button class="btn btn-primary float-button d-block d-sm-none" id="mobile-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-mobile" role="button">
+    <button class="btn float-button d-block d-sm-none" id="mobile-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-mobile" role="button">
     <i class="bi bi-chevron-double-right"></i>
     </button>
     <main class="d-flex flex-nowrap" style="margin-top:2rem;">
@@ -22,9 +22,9 @@
             <div class="list-group list-group-flush border-bottom scrollarea" id="list-tab" role="tablist">
                 <a class="list-group-item list-group-item-action py-3 lh-sm active" id="test1" data-bs-toggle="list" href="#list-1" role="tab" aria-controls="list-1">
                     <div class="d-flex w-100 align-items-center justify-content-between">
-                    <h3><strong class="mb-1">List group item heading</strong></h3>
+                    <h3><strong class="mb-1">Welcome</strong></h3>
                     </div>
-                    <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                    <div class="col-10 mb-1"></div>
                 </a>
                 <a class="list-group-item list-group-item-action py-3 lh-sm" id="test2" data-bs-toggle="list" href="#list-2" role="tab" aria-controls="list-2">
                     <div class="d-flex w-100 align-items-center justify-content-between">
@@ -71,9 +71,9 @@
                 <div class="list-group list-group-flush border-bottom scrollarea" id="list-tab" role="tablist">
                     <a class="list-group-item list-group-item-action py-3 lh-sm active" id="test1" data-bs-toggle="list" href="#list-1" role="tab" aria-controls="list-1">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                        <h3><strong class="mb-1">List group item heading</strong></h3>
+                        <h3><strong class="mb-1">Welcome</strong></h3>
                         </div>
-                        <div class="col-10 mb-1">Some placeholder content in a paragraph below the heading and date.</div>
+                        <div class="col-10 mb-1"></div>
                     </a>
                     <a class="list-group-item list-group-item-action py-3 lh-sm" id="test2" data-bs-toggle="list" href="#list-2" role="tab" aria-controls="list-2">
                         <div class="d-flex w-100 align-items-center justify-content-between">
@@ -113,8 +113,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <h1>Heading 1</h1>
-                            <p class="fs-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac enim vitae elit tincidunt vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed semper, dolor eu tincidunt viverra, nisl orci cursus nunc, at ornare erat sapien et nulla. Nullam auctor, velit in consectetur tristique, ex risus laoreet massa, nec malesuada orci magna nec sapien. Nullam eget semper magna. Donec vel elit sed elit volutpat tincidunt. Proin vel dui a eros aliquam commodo. Phasellus vel nibh sit amet urna feugiat venenatis. Sed hendrerit dolor nec nunc semper, eget ultricies urna tincidunt. Donec auctor, orci vitae aliquam fermentum, lorem tortor ultrices nisl, non pharetra sem orci at velit. Nulla facilisi. Nulla facilisi. Donec id libero non leo dignissim venenatis. Sed eget metus et tortor lacinia mollis. Praesent eget libero id nisl bibendum ornare. Integer vel sapien sit amet turpis placerat varius. Fusce vitae tellus sed nibh molestie mollis.</p>
+                        <h1>Environmental Health Issues Advice</h1>
+                            <p class="fs-5">Welcome! Welcome to the Environmental Health Issues Advice Page! We offer advice and resources to help you learn more about environmental health issues and how to protect yourself and your family from their risks. From air and water quality to radiation and waste management, our experts provide reliable, up-to-date information on a variety of topics.</p>
                         </div>
                     </div>
                 </div>

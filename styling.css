@@ -40,8 +40,9 @@ body{
 .float-button {
     position: fixed;
     left: -13px;
-    top: 57px;
+    top: 55px;
     cursor: pointer;
+    font-size: 1.25rem;
     }
 
 
