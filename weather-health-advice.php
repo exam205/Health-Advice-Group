@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Weather Health Advice</title>
     <?php include 'modules/links.php'; ?> 
 </head>
 <body>
@@ -14,6 +14,7 @@
     <i class="bi bi-chevron-double-right"></i>
     </button>
     <main class="d-flex flex-nowrap" style="margin-top:2rem;">
+        <!-- Medium+ Screen Sidebar -->
         <div class="b-example-divider b-example-vr d-none d-sm-block"></div>
         <div class="d-flex flex-column align-items-stretch text-bg-dark d-none d-sm-block" style="width: 400px;">
             <a href="" class="d-flex align-items-center p-3 link-light text-decoration-none border-bottom">
@@ -59,6 +60,8 @@
             </div>
         </div>
         <div class="b-example-divider b-example-vr d-none d-sm-block"></div>
+        <!-- End of Medium+ Screen Sidebar -->
+        <!-- Mobile Sidebar -->
         <div class="offcanvas offcanvas-start w-50" tabindex="-1" id="offcanvas-mobile">
             <div class="offcanvas-header">
                 <h6 class="offcanvas-title d-none d-sm-block" id="offcanvas-mobile">Menu</h6>
@@ -108,6 +111,8 @@
                 </div>
             </div>
         </div>
+        <!-- End of Mobile Sidebar -->
+        <!-- Tab Content -->
         <div class="tab-content text-wrap text-bg-dark rounded-3 py-3" id="nav-tabContent" style="height:fit-content;">
             <div class="tab-pane fade show active" id="list-1" role="tabpanel" aria-labelledby="test1">
                 <div class="container">
@@ -170,6 +175,7 @@
                 </div>
             </div>
         </div>
+        <!-- End of Tab Content -->
     </main>
     <script type="text/javascript" src="js/offcanvas-show.js" defer></script>
 </body>
