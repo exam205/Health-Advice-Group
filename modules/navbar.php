@@ -1,10 +1,21 @@
 <?php
+
+$page = $_SERVER['PHP_SELF'];
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+    $user = new User($_SESSION['uid'],$_SESSION['email'],$_SESSION['firstname'],$_SESSION['surname'],$_SESSION['postcode']);
+}
+if ($page == "/projects/Health-Advice-Group/edit-account.php"){
+  if (isset($user)){
+    $details = $user->getDetails(); 
+  }
+  else{
+    $_SESSION['error'] = "You must be logged in to view this page!";
+    header ("Location: index.php");
+  }
+}
 include_once 'modals/login-modal.php';
 include_once 'modals/signup-modal.php';
 include_once 'modals/account-details-modal.php';
-
-$page = $_SERVER['PHP_SELF'];
-
 ?>
 
 <!-- Navbar -->
@@ -44,7 +55,7 @@ $page = $_SERVER['PHP_SELF'];
                 <a class="nav-link" href="#">Health Tracker</a>
             </li>            
             <li class="nav-item">
-                <a class="nav-link" href="#">My Account</a>
+                <a class="nav-link <?php echo $page=="/projects/Health-Advice-Group/edit-account.php" ? "active" : ""?>" href="edit-account.php">My Account</a>
             </li>
             <li class="nav-item">
               <form action="functions/logout-action.php" method="POST">

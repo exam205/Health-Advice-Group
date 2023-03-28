@@ -58,8 +58,10 @@ class User{
         $_SESSION['postcode'] = $postcode;
         $_SESSION['firstname'] = $first_name;
         $_SESSION['surname'] = $last_name;
+        $_SESSION['email'] = $email;
         $_SESSION['success'] = "Logged in successfully!";
         $_SESSION['loggedin'] = true;
+        $conn->close();
         Common::goBack();
 
     }
@@ -75,6 +77,61 @@ class User{
         Common::goBack();
     }
 
+    function getDetails(){
+        include 'functions/dbconnect.php';
+        $sql = "SELECT tbl_useraccountinfo.account_country, tbl_useraccountinfo.account_city, tbl_useraccountinfo.account_gender_id
+         FROM tbl_useraccountinfo 
+         WHERE account_user_id = $this->id";
+        $query = $conn->query($sql);
+        $result = $query->fetch_assoc();
+        $additional_details = array(
+            "country" => $result['account_country'],
+            "city" => $result['account_city'],
+            "gender" => $result['account_gender_id']
+        );
+        $conn->close();
+        return $additional_details;
+
+    }
+
+    function update(){
+        include 'functions/dbconnect.php';
+        $details = $this->getDetails();
+        $first_name = strip_tags(mysqli_escape_string($conn,$_POST['editFirstNameInput']));
+        if (empty($first_name)){
+            $first_name = $this->first_name;
+        };
+        $last_name = strip_tags(mysqli_escape_string($conn,$_POST['editSurnameInput']));
+        if (empty($last_name)){
+            $last_name = $this->last_name;
+        };
+        $postcode = strip_tags(mysqli_escape_string($conn,$_POST['editPostcodeInput']));
+        if (empty($postcode)){
+            $postcode = $this->postcode;
+        };
+        $city = strip_tags(mysqli_escape_string($conn,$_POST['editCityInput']));
+        if (empty($city)){
+            $city = $details['city'];
+        };
+        $gender = $_POST['editGenderInput'];
+        if ($details['gender'] == $gender){
+            $gender = $details['gender'];
+        }
+        $country = $_POST['editCountryInput'];
+        if ($details['country'] == $country){
+            $country = $details['country'];
+        }
+        $sql = "UPDATE tbl_useraccountinfo SET account_firstname = '$first_name', account_surname = '$last_name', account_postcode = '$postcode', account_city = '$city', account_country = '$country', account_gender_id = $gender WHERE account_user_id = $this->id";
+        $conn->query($sql);
+        $conn->close();
+        $this -> first_name = $first_name;
+        $this -> last_name = $last_name;
+        $this -> postcode = $postcode;
+        $_SESSION['firstname'] = $first_name;
+        $_SESSION['surname'] = $last_name;
+        $_SESSION['postcode'] = $postcode;
+        $_SESSION['success'] = "Details updated successfully!";
+    }
 
 }
 ?>

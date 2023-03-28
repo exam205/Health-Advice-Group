@@ -1,5 +1,11 @@
-<?php // List of countries ?>
-<select id="countryInput" name="countryInput" class="form-select">
+<?php // List of countries
+if ($_SERVER['PHP_SELF'] == "/projects/Health-Advice-Group/edit-account.php"){
+    $name = "editCountryInput";
+    } else {
+    $name = "countryInput";
+}
+?>
+<select id="countryInput" name="<?php echo $name ?>" class="form-select">
                 <option value="" selected disabled>Select an Option</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
