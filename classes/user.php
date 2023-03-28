@@ -127,7 +127,7 @@ class User{
             $country = $details['country'];
         };
 
-        $sql = "UPDATE tbl_useraccountinfo SET account_firstname = '$first_name', account_surname = '$last_name', account_postcode = '$postcode', account_city = '$city', account_country = '$country', account_gender_id = $gender WHERE account_user_id = $this->id";
+        $sql = "UPDATE tbl_useraccountinfo SET account_firstname = '$first_name', account_surname = '$last_name', account_postcode = '$postcode', account_city = '$city', account_country = '$country', account_gender_id = '$gender' WHERE account_user_id = $this->id";
         $conn->query($sql);
         $conn->close();
         $this -> first_name = $first_name; // Update the user object
