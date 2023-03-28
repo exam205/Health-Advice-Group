@@ -11,12 +11,13 @@
 <body>
     <?php 
     include 'modules/navbar.php'; 
+
     if (isset($_POST['editFirstNameInput'])){
         $user->update();
     }
+
     ?>
     <div class="container py-4 text-bg-dark border rounded-3 mt-4" id="edit-details-form">
-        <!-- Create a title for the page -->
         <div class="row">
             <h1 class="display-5 fw-bold text-center">Edit Account Details</h1>
         </div>

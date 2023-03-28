@@ -4,15 +4,17 @@ $page = $_SERVER['PHP_SELF'];
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
     $user = new User($_SESSION['uid'],$_SESSION['email'],$_SESSION['firstname'],$_SESSION['surname'],$_SESSION['postcode']);
 }
-if ($page == "/projects/Health-Advice-Group/edit-account.php"){
+
+if ($page == "/projects/Health-Advice-Group/edit-account.php"){ // If the user is on the edit account page, we need to get the additional details from the database
   if (isset($user)){
     $details = $user->getDetails(); 
   }
   else{
-    $_SESSION['error'] = "You must be logged in to view this page!";
+    $_SESSION['error'] = "You must be logged in to view this page!"; // If the user is not logged in, redirect them to index page
     header ("Location: index.php");
   }
 }
+
 include_once 'modals/login-modal.php';
 include_once 'modals/signup-modal.php';
 include_once 'modals/account-details-modal.php';
