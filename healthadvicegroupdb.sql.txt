@@ -1,0 +1,188 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 28, 2023 at 02:17 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `healthadvicegroup`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_gender`
+--
+
+CREATE TABLE `tbl_gender` (
+  `gender_id` int(11) NOT NULL,
+  `gender_gender` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_gender`
+--
+
+INSERT INTO `tbl_gender` (`gender_id`, `gender_gender`) VALUES
+(1, 'Male'),
+(2, 'Female'),
+(3, 'Other');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_useraccountinfo`
+--
+
+CREATE TABLE `tbl_useraccountinfo` (
+  `account_id` int(11) NOT NULL,
+  `account_user_id` int(11) NOT NULL,
+  `account_gender_id` int(11) NOT NULL,
+  `account_firstname` varchar(100) NOT NULL,
+  `account_surname` varchar(100) NOT NULL,
+  `account_dob` date NOT NULL,
+  `account_postcode` varchar(8) NOT NULL,
+  `account_city` varchar(100) NOT NULL,
+  `account_country` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_useraccountinfo`
+--
+
+INSERT INTO `tbl_useraccountinfo` (`account_id`, `account_user_id`, `account_gender_id`, `account_firstname`, `account_surname`, `account_dob`, `account_postcode`, `account_city`, `account_country`) VALUES
+(7, 33, 1, 'Alex', 'Cooper', '2003-11-12', 'TR24BJ', 'Tresillian', 'England'),
+(9, 35, 3, 'Test', 'Update', '2003-11-12', 'G11BL', 'Glasgow', 'Scotland'),
+(20, 39, 1, 'Test', 'Testing', '2003-11-12', 'TR24BJ', 'Tresillian', 'England');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_userhealthinfo`
+--
+
+CREATE TABLE `tbl_userhealthinfo` (
+  `health_id` int(11) NOT NULL,
+  `health_user_id` int(11) NOT NULL,
+  `health_has_hayfever` tinyint(1) NOT NULL,
+  `health_weight` int(11) NOT NULL,
+  `health_height` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_users`
+--
+
+CREATE TABLE `tbl_users` (
+  `users_id` int(11) NOT NULL,
+  `users_email` varchar(255) NOT NULL,
+  `users_password` varchar(255) NOT NULL,
+  `users_salt` varchar(16) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`users_id`, `users_email`, `users_password`, `users_salt`) VALUES
+(33, 'logintest1@gmail.com', 'c63a7738a0d6434d1a9031ad928f118e97849c7010c823374d2e58fe8c44b874', 'e58ba8eb02cc3e08'),
+(35, 'test1@gmail.com', '921cfaec264e9893435650816f2887b9a364c5063b89f6092efa1811919c8b04', '21005ce4db3a0576'),
+(37, 'devlogentry1@gmail.com', '0259a9c66fafbf4d540f24184d9c65fda1c97357c1edd24e899e60900c458b1d', 'f0290dad381ff384'),
+(39, 'test3@gmail.com', '1d5abe700dfdedce1498e1f3fa95f71f8142888d13ce49b6ebbd653296fe03d4', '0b41cc382d719317'),
+(40, 'logintest2@gmail.com', 'f098b5d372f111deca82e389c11b561ab94daccbae45e487c8565ed2523da9ae', 'ee960a0e7e4126da');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_gender`
+--
+ALTER TABLE `tbl_gender`
+  ADD PRIMARY KEY (`gender_id`);
+
+--
+-- Indexes for table `tbl_useraccountinfo`
+--
+ALTER TABLE `tbl_useraccountinfo`
+  ADD PRIMARY KEY (`account_id`),
+  ADD KEY `account_user_id` (`account_user_id`,`account_gender_id`),
+  ADD KEY `account_gender_id` (`account_gender_id`);
+
+--
+-- Indexes for table `tbl_userhealthinfo`
+--
+ALTER TABLE `tbl_userhealthinfo`
+  ADD PRIMARY KEY (`health_id`),
+  ADD KEY `health_user_id` (`health_user_id`);
+
+--
+-- Indexes for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`users_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_gender`
+--
+ALTER TABLE `tbl_gender`
+  MODIFY `gender_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_useraccountinfo`
+--
+ALTER TABLE `tbl_useraccountinfo`
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `tbl_userhealthinfo`
+--
+ALTER TABLE `tbl_userhealthinfo`
+  MODIFY `health_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `users_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_useraccountinfo`
+--
+ALTER TABLE `tbl_useraccountinfo`
+  ADD CONSTRAINT `tbl_useraccountinfo_ibfk_1` FOREIGN KEY (`account_user_id`) REFERENCES `tbl_users` (`users_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_useraccountinfo_ibfk_2` FOREIGN KEY (`account_gender_id`) REFERENCES `tbl_gender` (`gender_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `tbl_userhealthinfo`
+--
+ALTER TABLE `tbl_userhealthinfo`
+  ADD CONSTRAINT `tbl_userhealthinfo_ibfk_1` FOREIGN KEY (`health_user_id`) REFERENCES `tbl_useraccountinfo` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
